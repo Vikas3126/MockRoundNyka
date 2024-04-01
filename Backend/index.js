@@ -4,10 +4,12 @@ const app=express();
 const userRouter=require("./Controller/userController");
 const boardNameRouter=require("./Controller/boardNameController");
 const taskRouter=require("./Controller/taskController")
+const cors=require("cors")
 
 
 app.use(express.json());
 
+app.use(cors())
 app.get("/",(req,res)=>{
     res.json({mesg:"working"})
 })
